@@ -1,0 +1,49 @@
+@import url("./normalize.css");
+@import "./fonts.css";
+
+:root {
+  --container-width: 1210px;
+  --container-padding: 15px;
+  --font-family: "Nunito Sans", sans-serif;
+  --font-family-next: "Next", sans-serif;
+  --main-color-text: #18121e;
+  --yellow-color-text: #f2be22;
+  --white-color-text: #fdfdfd;
+  --second-text-color: #1a3e3e;
+  --bg-color-section: #f3f5f4;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+ul li {
+  list-style: none;
+}
+
+.container {
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+}
+
+.header {
+  background-image: url("./../img/header/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: var(--white-color-text);
+}
+
+.header_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+}
+
+.nav-ul {
+  display: flex;
+  gap: 24px;
+  font-weight: 600;
+}
