@@ -6,12 +6,19 @@
     <title>РумТибет</title>
     <link rel="stylesheet" href="styles/main.css" />
     <script src="./script/script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   </head>
   <body>
     <header class="header">
       <div class="container">
         <div class="header_content">
-          <a href="#"><img src="./img/header/logo.svg" alt="" /></a>
+          <a href="#" class="logo"
+            ><img src="./img/header/logo.svg" alt=""
+          /></a>
           <nav class="nav">
             <ul class="nav-ul">
               <li><a href="">Главная</a></li>
@@ -28,60 +35,113 @@
     </header>
 
     <main>
-      <div class="search">
-        <div class="search-inner container">
-          <h1>
-            Насладись прогулкой в горах<br />
-            с командой единомышленников
-          </h1>
-          <form action="#" class="search-form">
-            <div class="select-container">
-              <div class="select-location" onclick="toggleDropdown('location')">
-                <span class="span-label">Локация для тура</span>
-                <img src="./img/header/Vector.svg" alt="Стрелка" />
-              </div>
-              <span class="span-choose">выберите из списка</span>
-              <input
-                type="hidden"
-                name="select_location"
-                id="hidden_location"
-              />
-              <div class="select-dropdown" id="dropdown_location">
-                <span onclick="selectOption(this, 'Локация 1', 'location')"
-                  >Локация 1</span
+      <section class="search">
+        <div class="search-container">
+          <div class="search-inner container">
+            <h1>
+              Насладись прогулкой в горах<br />
+              с командой единомышленников
+            </h1>
+            <form action="#" method="POST" class="search-form">
+              <div class="select-container">
+                <div
+                  class="select-content"
+                  onclick="toggleDropdown('location')"
                 >
-                <span onclick="selectOption(this, 'Локация 2', 'location')"
-                  >Локация 2</span
-                >
-                <span onclick="selectOption(this, 'Локация 3', 'location')"
-                  >Локация 3</span
-                >
+                  <span class="span-label" name="location"
+                    >Локация для тура</span
+                  >
+                  <img src="./img/header/Vector.svg" alt="Стрелка" />
+                </div>
+                <span class="span-choose">выберите из списка</span>
+                <input
+                  type="hidden"
+                  name="select_location"
+                  id="hidden_location"
+                />
+                <div class="select-dropdown" id="dropdown_location">
+                  <span
+                    class="span-dropdown"
+                    onclick="selectOption(this, 'Локация 1', 'location')"
+                    >Локация 1</span
+                  >
+                  <span
+                    class="span-dropdown"
+                    onclick="selectOption(this, 'Локация 2', 'location')"
+                    >Локация 2</span
+                  >
+                  <span
+                    class="span-dropdown"
+                    onclick="selectOption(this, 'Локация 3', 'location')"
+                    >Локация 3</span
+                  >
+                </div>
               </div>
-            </div>
 
-            <div class="select-container">
-              <div class="select-location" onclick="toggleDropdown('date')">
-                <span class="span-label">Дата похода</span>
-                <img src="./img/header/Vector.svg" alt="Стрелка" />
+              <div class="select-container">
+                <div class="select-content" onclick="openCalendar()">
+                  <span class="span-label" id="selected-date-label"
+                    >Дата похода</span
+                  >
+                  <img src="./img/header/formkit_date.svg" alt="Стрелка" />
+                </div>
+                <span class="span-choose">укажите диапазон</span>
+
+                <!-- Это поле будет использовать Flatpickr -->
+                <input
+                  type="text"
+                  id="calendar-input"
+                  placeholder="Выберите дату"
+                  style="visibility: hidden"
+                />
               </div>
-              <span class="span-choose">укажите диапазон</span>
-            </div>
 
-            <div class="select-container">
-              <div
-                class="select-location"
-                onclick="toggleDropdown('participants')"
-              >
-                <span class="span-label">Количество участников</span>
-                <img src="./img/header/Vector.svg" alt="Стрелка" />
+              <div class="select-container">
+                <div class="select-content" onclick="">
+                  <span class="span-label">Участники</span>
+                  <img src="./img/header/Vector.svg" alt="Стрелка" />
+                </div>
+                <span class="span-choose">минимум 4 человека</span>
               </div>
-              <span class="span-choose">минимум 4 человека</span>
-            </div>
 
-            <button class="btn-form">Найти программу</button>
-          </form>
+              <button class="btn-form">Найти программу</button>
+            </form>
+          </div>
         </div>
-      </div>
+      </section>
+
+      <section class="camping">
+        <div class="container">
+          <div class="camping-content">
+            <div class="camping-inner">
+              <div class="camping-wrapper">
+                <div class="camping-img1 img"></div>
+                <div class="camping-img2 img">
+                  <img
+                    class="camping-img3"
+                    src="img/main/section_camping/play.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="camping-info">
+              <h2 class="camping-h2">о нашем походе</h2>
+              <h3 class="camping-h3">
+                Исследуйте все горные массивы мира вместе с нами
+              </h3>
+              <p class="camping-p">
+                Его корни уходят в один фрагмент классической латыни 45 года
+                н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
+                профессор латыни из колледжа Hampden-Sydney, штат Вирджиния,
+                взял одно из самых странных слов в Lorem Ipsum, "consectetur"и
+                занялся его поисками в классической латинской литературе.
+              </p>
+              <button class="btn-camping">Программа тура</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer></footer>
