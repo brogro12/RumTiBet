@@ -43,4 +43,14 @@ document.addEventListener("click", function (event) {
   }
 });
 
-console.log("123");
+document.querySelectorAll("*").forEach((el) => {
+  if (el.scrollWidth > document.documentElement.clientWidth) {
+    console.log(el);
+  }
+});
+
+document.querySelectorAll(".card").forEach((card) => {
+  card.addEventListener("click", function () {
+    this.classList.toggle("open");
+  });
+});
