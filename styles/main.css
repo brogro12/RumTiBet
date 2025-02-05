@@ -441,6 +441,9 @@ select {
   position: relative;
   -webkit-tap-highlight-color: transparent;
   user-select: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .card-rating {
@@ -575,15 +578,49 @@ select {
   margin: 0px 0px 32px 20px;
 }
 
-.card {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-}
-
 .card:focus,
 .card:active {
   outline: none;
+}
+
+.btn-popular {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.btn-popular a {
+  color: var(--white-color-text);
+  background-color: var(--second-text-color);
+  padding: 16px 36px;
+}
+
+.blog {
+  background-color: #f3f5f4;
+}
+
+.blog-title {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0px 40px 0px;
+}
+
+.blog-h2 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--yellow-color-text);
+  margin: 0px 0px 8px 0px;
+}
+
+.blog-h3 {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 38px;
+  margin: 0;
 }
 
 @media screen and (max-width: 1206px) {
