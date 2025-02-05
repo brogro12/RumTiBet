@@ -30,6 +30,18 @@ button {
   border: none;
 }
 
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.btn a {
+  color: var(--white-color-text);
+  background-color: var(--second-text-color);
+  padding: 16px 36px;
+}
+
 .main-h2 {
   font-family: var(--font-family);
   font-weight: 400;
@@ -621,6 +633,101 @@ select {
   font-size: 2rem;
   line-height: 38px;
   margin: 0;
+}
+
+.blog-img {
+  min-width: 230px;
+  min-height: 280px;
+}
+
+.blog-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 50px;
+  gap: 24px;
+}
+
+.blog-item {
+  display: flex;
+  background-color: var(--white-color-text);
+  padding: 16px;
+  gap: 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.blog-info h4 {
+  font-family: var(--font-family);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 32px;
+  margin: 16px 0px 24px 0px;
+}
+
+.blog-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog-p {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 20px;
+  margin: 0px 0px 24px 0px;
+  min-height: 116px;
+}
+
+.blog-link span {
+  color: var(--yellow-color-text);
+}
+
+.blog-link a {
+  color: var(--second-text-color);
+  font-family: var(--font-family);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.city {
+  background-image: url("/img/main/section_blog/city.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+.plane {
+  background-image: url("/img/main/section_blog/plane.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+.street {
+  background-image: url("/img/main/section_blog/street.png");
+  background-position: center center;
+  background-size: cover;
+}
+.temple {
+  background-image: url("/img/main/section_blog/temple.png");
+  background-position: center center;
+  background-size: cover;
+}
+
+.blog-item:hover {
+  backdrop-filter: blur(15px);
+  box-shadow: 24px 18px 30px #18121e1f;
+  cursor: url("/img/main/section_blog/fa6-solid_hand-pointer.svg"), auto;
+}
+
+.blog-item:hover h4 {
+  color: #1a3e3e;
+  text-decoration: #1a3e3e solid underline;
 }
 
 @media screen and (max-width: 1206px) {
