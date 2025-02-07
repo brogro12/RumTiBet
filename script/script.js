@@ -54,3 +54,31 @@ document.querySelectorAll(".card").forEach((card) => {
     this.classList.toggle("open");
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  new Swiper(".report-slider", {
+    slidesPerView: "auto", // Автоматическая ширина слайдов
+    spaceBetween: 10, // Отступы между слайдами
+    loop: false, // Без бесконечного прокручивания
+    grabCursor: true, // Эффект "руки" при наведении
+    touchRatio: 1, // Чувствительность свайпа
+    touchReleaseOnEdges: true, // Возможность тянуть с края
+    simulateTouch: true, // Поддержка тач-жестов
+    freeMode: true, // Свободный скроллинг без привязки
+  });
+});
+
+const nav_id = document.getElementById("nav-burger-id");
+const burger_btn = document.getElementById("burger-btn");
+const burger_img = document.querySelector(".burger-btn-img");
+const body = document.body;
+
+burger_btn.onclick = () => {
+  if (nav_id.classList.toggle("open")) {
+    burger_img.src = "./img/burger/burger_close.svg";
+    body.classList.add("burger-open");
+  } else {
+    burger_img.src = "./img/burger/burger-open.svg";
+    body.classList.remove("burger-open");
+  }
+};

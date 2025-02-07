@@ -6,6 +6,8 @@
     <title>РумТибет</title>
     <link rel="stylesheet" href="styles/main.css" />
     <script src="./script/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -14,7 +16,7 @@
           <a href="#" class="logo"
             ><img src="./img/header/logo.svg" alt=""
           /></a>
-          <nav class="nav">
+          <nav class="nav" id="nav-id">
             <ul class="nav-ul">
               <li><a href="">Главная</a></li>
               <li><a href="">Про гида</a></li>
@@ -24,7 +26,57 @@
               <li><a href="">Контакты</a></li>
             </ul>
           </nav>
-          <button class="btn-header">Консультация</button>
+          <a class="btn-header" href="#">Консультация</a>
+
+
+          <nav class="nav-burger" id="nav-burger-id">
+            <ul class="nav-ul-burger">
+              <li><a href="">
+                <svg width="16" height="16" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="burger-vector" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                </svg>
+                <span class="burger-span">Про гида</span>
+              </a></li>
+              <li><a href="">
+                <svg width="16" height="16" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="burger-vector" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                  </svg>
+                  <span class="burger-span">
+                    Программа тура
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                  <svg width="16" height="16" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="burger-vector" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                  </svg>
+                  <span class="burger-span">
+                    Стоимость
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                <svg width="16" height="16"v viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="burger-vector" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                  </svg>
+                  <span class="burger-span">Блог</span>
+                </a>
+              </li>
+              <li>
+                <a href="">
+                <svg width="16" height="16" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="burger-vector" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                </svg>
+                <span class="burger-span">Контакты</span>
+              </a>
+              </li>
+            </ul>
+          </nav>
+          <button class="nav-burger-btn" id="burger-btn">
+            <img class='burger-btn-img' src="/img/burger/burger-open.svg" alt="">
+          </button>
         </div>
       </div>
     </header>
@@ -37,6 +89,7 @@
               Насладись прогулкой в горах<br />
               с командой единомышленников
             </h1>
+            <button class="btn-form-mobile" type="submit">Найти программу</button>
             <form action="#" method="POST" class="search-form">
               <div class="select-container">
                 <div
@@ -90,10 +143,10 @@
                 </div>
                 <span class="span-choose">минимум 4 человека</span>
               </div>
-
-              <button class="btn-form">Найти программу</button>
+              <button class="btn-form" type="submit">Найти программу</button>
             </form>
           </div>
+
         </div>
       </section>
 
@@ -110,10 +163,17 @@
                     alt=""
                   />
                 </div>
+                <img
+                    class="camping-img4"
+                    src="img/main/section_camping/play.svg"
+                    alt=""
+                  />
               </div>
             </div>
             <div class="camping-info">
-              <h2 class="main-h2">о нашем походе</h2>
+              <div>
+                <h2 class="main-h2">о нашем походе</h2>
+              </div>
               <h3 class="main-h3">
                 Исследуйте все горные массивы мира вместе с нами
               </h3>
@@ -124,7 +184,9 @@
                 взял одно из самых странных слов в Lorem Ipsum, "consectetur"и
                 занялся его поисками в классической латинской литературе.
               </p>
-              <button class="btn-camping">Программа тура</button>
+              <div class="camping-btn">
+                <a href="#">Программа тура</a>
+              </div>
             </div>
           </div>
         </div>
@@ -134,38 +196,45 @@
         <div class="container">
           <div class="offer-inner">
             <div class="offer-left">
-              <h2 class="main-h2">наше предложение</h2>
-              <h3 class="main-h3">Лучшие программы для тебя</h3>
+              <div class="offer-title">
+                <h2 class="main-h2">наше предложение</h2>
+                <h3 class="main-h3">Лучшие программы для тебя</h3>
+              </div>
+             
               <p class="main-p">
                 Его корни уходят в один фрагмент классической латыни 45 года н.э.,
                 то есть более двух тысячелетий назад. Ричард МакКлинток, профессор
                 латыни из колледжа.
               </p>
-              <div class="offer-item">
-                <div class="offer-item-logo">
+              <div class="offer-list">
+                <div class="offer-item">
+                  <div class="offer-item-logo">
+                  </div>
+                  <div class="offer-item-info">
+                    <h4 class="main-h4">Опытный гид</h4>
+                    <p class="second-p">Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.</->
+                  </div>
                 </div>
-                <div class="offer-item-info">
-                  <h4 class="main-h4">Опытный гид</h4>
-                  <p class="second-p">Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.</->
+                <div class="offer-item">
+                  <div class="offer-item-logo2">
+                  </div>
+                  <div class="offer-item-info">
+                    <h4 class="main-h4">Безопасный поход</h4>
+                    <p class="second-p">Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.</->
+                  </div>
+                </div>
+                <div class="offer-item">
+                  <div class="offer-item-logo3">
+                  </div>
+                  <div class="offer-item-info">
+                    <h4 class="main-h4">Лояльные цены</h4>
+                    <p class="second-p">Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.</->
+                  </div>
                 </div>
               </div>
-              <div class="offer-item">
-                <div class="offer-item-logo2">
-                </div>
-                <div class="offer-item-info">
-                  <h4 class="main-h4">Безопасный поход</h4>
-                  <p class="second-p">Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.</->
-                </div>
+              <div class="offer-btn">
+                <a href="#" >Стоимость программы</a>
               </div>
-              <div class="offer-item">
-                <div class="offer-item-logo3">
-                </div>
-                <div class="offer-item-info">
-                  <h4 class="main-h4">Лояльные цены</h4>
-                  <p class="second-p">Для современного мира базовый вектор развития предполагает независимые способы реализации соответствующих условий активизации.</->
-                </div>
-              </div>
-              <button class="offer-btn">Стоимость программы</button>
             </div>
             <div class="offer-right">
               <div class="offer-img"></div>
@@ -344,30 +413,176 @@
 
       <section class="report">
         <div class="container">
-          <div class="report-inner">
-            <div class="section-title">
-              <h2 class="section-h2">фото-отчет</h2>
-              <h3 class="section-h3">Делимся впечатлениями</h3>
-            </div>
+            <div class="report-inner">
+              <div class="section-title">
+                <h2 class="section-h2">фото-отчет</h2>
+                <h3 class="section-h3">Делимся впечатлениями</h3>
+              </div>
 
-            <div class="report-wrapper">
-              <div class="report-img foto"></div>
-              <div class="report-img pencil"></div>
-              <div class="report-img hotel"></div>
-              <div class="report-img boats"></div>
-              <div class="report-img canyon"></div>
-              <div class="report-img book"></div>
-            </div>
+              <div class="report-wrapper">
+                <div class="report-img foto"></div>
+                <div class="report-img pencil"></div>
+                <div class="report-img hotel"></div>
+                <div class="report-img boats"></div>
+                <div class="report-img canyon"></div>
+                <div class="report-img book"></div>
+              </div>
 
-            <div class="btn">
-              <a href="#">Наш pinterest</a>
+              <div class="btn-report">
+                <a href="#">Наш pinterest</a>
+              </div>
             </div>
-
-          </div>
+            <div class="subcribe">
+              <div class="subcribe-inner">
+                <div class="subcribe-title">
+                    <h2 class="subcribe-h2">актуально</h2>
+                  <h3 class="subcribe-h3">Получайте полезные рассылки о путешествиях</h3>
+                </div>
+                <div class="subcribe-mail">
+                  <span class="mail-name">Введите e-mail адрес</span>
+                  <div class="mail-inner">
+                    <form action="" class="form-mail">
+                      <input class="subcribe-mail-input" type="text" name="mail" id="" placeholder="name@domain.com">
+                      <button class="btn-subcribe" type="submit">Подписаться на новости</button>
+                    </form>
+                  </div>
+                  <span class="сonditions">подписываясь на новости, вы автоматически соглашаетесь с <a class="underline" href="#">условиями обработки персональных данных</a> и <a class="underline" href="#">правилами рекламных рассылок</a></span>
+                </div>
+              </div>
+            </div>
         </div>
       </section>
     </main>
 
-    <footer></footer>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-inner">
+          <div class="footer-info">
+            <h3 class="footer-h3">Компания «РумТибет»</h3>
+            <p class="footer-info-p">Его корни уходят в один фрагмент классической латыни 45 года <br> н.э., то есть более двух тысячелетий назад. Ричард МакКлинток, профессор латыни из колледжа Hampden-Sydney.</p>
+            <div class="contacts">
+              <div class="contacts-item">
+                <a href="mailto:info@domain.com">info@domain.com</a>
+              </div>
+              <div class="contacts-item">
+                <a href="tel:+71234567890">+7 (123) 456-78-90</a>
+              </div>
+            </div>
+            <div class="links">
+              <a href="#"><img src="/img/footer/telegram.svg" alt=""></a>
+              <a href="#"><img src="/img/footer/vk.svg" alt=""></a>
+              <a href="#"><img src="/img/footer/pinterest.svg" alt=""></a>
+              <a href="#"><img src="/img/footer/skype.svg" alt=""></a>
+            </div>
+          </div>
+          <div class="services">
+            <h3 class="footer-h3">Наши услуги</h3>
+            <div class="services-list">
+              <div class="footer-item">
+                <a href="#">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path class="footer-icon" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                  </svg>
+                  <span class="footer-name">Прогулки в горы летом</span>
+                </a>
+              </div>
+              <div class="footer-item">
+                <a href="#">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer-icon" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                    </svg>
+                  <span class="footer-name">Зимние походы в горы</span>
+                </a>
+              </div>
+              <div class="footer-item">
+                <a href="#">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer-icon" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                    </svg>
+                  <span class="footer-name">Посещение храмов в горах</span>
+                </a>
+              </div>
+              <div class="footer-item">
+                <a href="#">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer-icon" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                    </svg>
+                  <span class="footer-name">Экстремальные виды туризма</span>
+                </a>
+              </div>
+              <div class="footer-item">
+                <a href="#">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer-icon" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                    </svg>
+                  <span class="footer-name">Походы в джунглях Амазонии</span>
+                </a>
+              </div>
+              <div class="footer-item">
+                <a href="#">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer-icon" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                    </svg>
+                  <span class="footer-name">Поездка в Африку</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="important">
+            <h3 class="footer-h3">Важно для путешествий</h3>
+            <div class="important-list">
+              <div class="footer-item">
+                <a href="#">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer-icon" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                    </svg>
+                  <span class="footer-name">Как собрать в долгий поход?</span>
+                </a>
+              </div>
+              <div class="footer-item">
+                <a href="#">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer-icon" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                    </svg>
+                  <span class="footer-name">Жизненно важные предметы для похода</span>
+                </a>
+              </div>
+              <div class="footer-item">
+                <a href="#">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer-icon" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                    </svg>
+                  <span class="footer-name">Медицинская страховка, гарантии безопасности</span>
+                </a>
+              </div>
+              <div class="footer-item">
+                <a href="#">
+                  <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="footer-icon" d="M5.7154 4.6098L1.26527 0.159755C1.16235 0.0567475 1.02495 0 0.878448 0C0.731945 0 0.594548 0.0567475 0.491622 0.159755L0.163901 0.487394C-0.0493491 0.700889 -0.0493491 1.04788 0.163901 1.26105L3.90078 4.99793L0.159755 8.73895C0.0568288 8.84196 0 8.97928 0 9.1257C0 9.27228 0.0568288 9.4096 0.159755 9.51269L0.487476 9.84024C0.590483 9.94325 0.727799 10 0.874302 10C1.0208 10 1.1582 9.94325 1.26113 9.84024L5.7154 5.38613C5.81857 5.2828 5.87524 5.14484 5.87491 4.99817C5.87524 4.85094 5.81857 4.71305 5.7154 4.6098Z" fill="currentColor"/>
+                    </svg>
+                  <span class="footer-name">Если вы врач - загляните сюда</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      <div class="copyright">
+        <div class="container">
+          <div class="copyright-inner">
+            <div class="owner">
+              ИП Константинопольский К.К., 2023
+            </div>
+            <div class="personal-data">
+              <a href="#">Политика обработки персональных данных</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+   
+      
   </body>
 </html>
