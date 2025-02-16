@@ -1,70 +1,68 @@
-function toggleDropdown(location) {
-  let container = document.querySelector(".select-container");
-  let dropdown = document.querySelector(".select-dropdown");
+const hiddenInputLocation = document.getElementById("#hiddenInputLocation");
+const checkbox_location = document.querySelector(".checkbox-select-location");
+const checkbox_count = document.querySelector(".checkbox-count-member");
+const options_list_location = document.getElementById("options-list-location");
+const options_list_members = document.getElementById("options-list-members");
+const selected_name_location = document.querySelector(
+  ".selected-name-location"
+);
+const selected_count_members = document.querySelector(
+  ".selected-count-members"
+);
 
-  let isOpen = container.classList.contains("active");
-
-  if (isOpen) {
-    dropdown.style.display = "none";
-    container.classList.remove("active");
+checkbox_location.addEventListener("change", function () {
+  if (this.checked) {
+    options_list_location.style.display = "block";
   } else {
-    closeAllDropdowns();
-    dropdown.style.display = "block";
-    container.classList.add("active");
-  }
-}
-
-function selectOption(element, value, location) {
-  document.querySelector(".span-label").textContent = value;
-  document.getElementById("hidden_location").value = value;
-  closeDropdown();
-}
-
-function closeDropdown() {
-  let container = document.querySelector(".select-container");
-  let dropdown = document.querySelector(".select-dropdown");
-  dropdown.style.display = "none";
-  container.classList.remove("active");
-}
-
-function closeAllDropdowns() {
-  const dropdowns = document.querySelectorAll(".select-dropdown");
-  const chooseSpans = document.querySelectorAll(".span-choose");
-
-  dropdowns.forEach((dropdown) => (dropdown.style.display = "none"));
-  chooseSpans.forEach((span) => (span.style.display = "block"));
-}
-
-document.addEventListener("click", function (event) {
-  let container = document.querySelector(".select-container");
-
-  if (!container.contains(event.target)) {
-    closeDropdown();
+    options_list_location.style.display = "none";
   }
 });
 
-document.querySelectorAll("*").forEach((el) => {
-  if (el.scrollWidth > document.documentElement.clientWidth) {
-    console.log(el);
+checkbox_count.addEventListener("change", function () {
+  if (this.checked) {
+    options_list_members.style.display = "block";
+  } else {
+    options_list_members.style.display = "none";
+  }
+});
+
+function selectedOptionLocation(element) {
+  let value = element.getAttribute("data-value");
+  selected_name_location.textContent = value;
+  options_list_location.style.display = "none";
+  checkbox_location.checked = false;
+}
+
+function selectedOptionCount(element) {
+  let value = element.getAttribute("data-value");
+  selected_count_members.textContent = value;
+  options_list_members.style.display = "none";
+  checkbox_count.checked = false;
+}
+
+document.addEventListener("click", function (event) {
+  if (
+    !options_list_location.contains(event.target) &&
+    event.target !== checkbox_location
+  ) {
+    options_list_location.style.display = "none";
+    checkbox_location.checked = false;
+  }
+});
+
+document.addEventListener("click", function (event) {
+  if (
+    !options_list_members.contains(event.target) &&
+    event.target !== checkbox_count
+  ) {
+    options_list_members.style.display = "none";
+    checkbox_count.checked = false;
   }
 });
 
 document.querySelectorAll(".card").forEach((card) => {
   card.addEventListener("click", function () {
     this.classList.toggle("open");
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  new Swiper(".report-slider", {
-    slidesPerView: "auto", // Автоматическая ширина слайдов
-    spaceBetween: 10, // Отступы между слайдами
-    loop: false, // Без бесконечного прокручивания
-    grabCursor: true, // Эффект "руки" при наведении
-    touchRatio: 1, // Чувствительность свайпа
-    touchReleaseOnEdges: true, // Возможность тянуть с края
-    simulateTouch: true, // Поддержка тач-жестов
-    freeMode: true, // Свободный скроллинг без привязки
   });
 });
 
@@ -82,3 +80,7 @@ burger_btn.onclick = () => {
     body.classList.remove("burger-open");
   }
 };
+
+flatpickr(".select-date", {
+  dateFormat: "d.m.Y",
+});
