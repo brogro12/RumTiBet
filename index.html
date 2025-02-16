@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>РумТибет</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="styles/main.css" />
-    <script src="./script/script.js" defer></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
   </head>
   <body>
     <header class="header">
@@ -90,60 +88,55 @@
               с командой единомышленников
             </h1>
             <button class="btn-form-mobile" type="submit">Найти программу</button>
-            <form action="#" method="POST" class="search-form">
+            <form action="" method="POST" class="search-form">
+
               <div class="select-container">
-                <div
-                  class="select-content"
-                  onclick="toggleDropdown('location')"
-                >
-                  <span class="span-label" name="location"
-                    >Локация для тура</span
-                  >
-                  <img src="./img/header/Vector.svg" alt="Стрелка" />
+                <div class="select-inner">
+                  <span class="selected-name-location">Локация для тура</span>
+                  <img src="/img/header/Vector.svg" alt="">
+                  <input type="hidden" name="chosenValue" id="hiddenInputLocation">
+                  <label class="label-select" for="1"></label>
                 </div>
-                <span class="span-choose">выберите из списка</span>
-                <input
-                  type="hidden"
-                  name="select_location"
-                  id="hidden_location"
-                />
-                <div class="select-dropdown" id="dropdown_location">
-                  <span
-                    class="span-dropdown"
-                    onclick="selectOption(this, 'Локация 1', 'location')"
-                    >Локация 1</span
-                  >
-                  <span
-                    class="span-dropdown"
-                    onclick="selectOption(this, 'Локация 2', 'location')"
-                    >Локация 2</span
-                  >
-                  <span
-                    class="span-dropdown"
-                    onclick="selectOption(this, 'Локация 3', 'location')"
-                    >Локация 3</span
-                  >
-                </div>
+                <span>выберите из списка</span>
+              
+                <input class="checkbox-select-location" type="checkbox" id="1">
+                
+                <ul class="options" id="options-list-location">
+                  <li class="option-item name-location" onclick="selectedOptionLocation(this)" data-value="Локация 1" >Локация 1</li>
+                  <li class="option-item name-location" onclick="selectedOptionLocation(this)" data-value="Локация 2">Локация 2</li>
+                  <li class="option-item name-location" onclick="selectedOptionLocation(this)" data-value="Локация 3">Локация 3</li>
+                  <li class="option-item name-location" onclick="selectedOptionLocation(this)" data-value="Локация 4">Локация 4</li>
+                  <li class="option-item name-location" onclick="selectedOptionLocation(this)" data-value="Локация 5">Локация 5</li>
+                </ul>
               </div>
 
               <div class="select-container">
-                <div class="select-content" onclick="">
-                  <span class="span-label" id="selected-date-label"
-                    >Дата похода</span
-                  >
-                  <img src="./img/header/formkit_date.svg" alt="Стрелка" />
-                </div>
-                <span class="span-choose">укажите диапазон</span>
+                <label class="select-inner" for="2">
+                  <input type="text" class="select-date" placeholder="Дата похода">
+                  <img src="/img/header/formkit_date.svg" alt="">
+                </label>
+                <span>выберите из списка</span>
               </div>
 
               <div class="select-container">
-                <div class="select-content" onclick="">
-                  <span class="span-label">Участники</span>
-                  <img src="./img/header/Vector.svg" alt="Стрелка" />
-                </div>
-                <span class="span-choose">минимум 4 человека</span>
+                <label class="select-inner" for="3">
+                  <span class="selected-count-members">Кол-во. участников</span>
+                  <img src="/img/header/Vector.svg" alt="">
+                </label>
+                <input class="checkbox-count-member" type="checkbox" id="3">
+                <span>минимум 4 человека</span>
+
+                <ul class="options" id="options-list-members">
+                  <li class="option-item count-members" onclick="selectedOptionCount(this)" data-value="4">4</li>
+                  <li class="option-item count-members" onclick="selectedOptionCount(this)" data-value="5">5</li>
+                  <li class="option-item count-members" onclick="selectedOptionCount(this)" data-value="6">6</li>
+                  <li class="option-item count-members" onclick="selectedOptionCount(this)" data-value="7">7</li>
+                  <li class="option-item count-members" onclick="selectedOptionCount(this)" data-value="8">8</li>
+                </ul>
               </div>
-              <button class="btn-form" type="submit">Найти программу</button>
+              
+
+              <button type="submit" class="form-button">Найти программу</button>
             </form>
           </div>
 
@@ -171,12 +164,12 @@
               </div>
             </div>
             <div class="camping-info">
-              <div>
+              <div class="camping-name">
                 <h2 class="main-h2">о нашем походе</h2>
+                <h3 class="main-h3">
+                  Исследуйте все горные массивы мира вместе с нами
+                </h3>
               </div>
-              <h3 class="main-h3">
-                Исследуйте все горные массивы мира вместе с нами
-              </h3>
               <p class="main-p">
                 Его корни уходят в один фрагмент классической латыни 45 года
                 н.э., то есть более двух тысячелетий назад. Ричард МакКлинток,
@@ -581,8 +574,11 @@
         </div>
       </div>
     </footer>
-    
-   
-      
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <script src="./script/script.js"></script>
+
   </body>
 </html>
